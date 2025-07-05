@@ -68,4 +68,40 @@ Your work will be automatically submitted when you push to your GitHub Classroom
 - [React Documentation](https://react.dev/)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
 - [Vite Documentation](https://vitejs.dev/guide/)
-- [React Router Documentation](https://reactrouter.com/) 
+- [React Router Documentation](https://reactrouter.com/)
+
+- npm create vite@latest my-react-app -- --template react
+- cd my-react-app
+- npm install -D tailwindcss postcss autoprefixer
+
+- /** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,jsx,ts,tsx}"
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+import './index.css'  // Make sure this matches your CSS file
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+)
+export default function App() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-400 to-pink-600 text-white text-3xl font-bold">
+      Hello, Tailwind CSS + Vite + React!
+    </div>
+  )
+}
